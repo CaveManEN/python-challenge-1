@@ -174,5 +174,23 @@ while place_order:
             print(f"{menu_category} was not a menu option.")
     else:
         # Tell the customer they didn't select a number
-        print("
+        print("Invalid input. Please enter a number.")
 
+# Generate and print the order receipt
+print("\nOrder Receipt:")
+print("Item Name                | Quantity | Price")
+print("-----------------------------------------")
+total_cost = 0
+for order in order_list:
+    item_name = order["Item name"]
+    quantity = order["Quantity"]
+    price = order["Price"]
+    total_item_cost = price * quantity
+    total_cost += total_item_cost
+    print(f"{item_name:25} | {quantity:8} | ${total_item_cost:.2f}")
+
+print("-----------------------------------------")
+print(f"Total Cost: ${total_cost:.2f}")
+
+# Thank the customer for ordering
+print("\nThank you for your order! Have a great day!")
